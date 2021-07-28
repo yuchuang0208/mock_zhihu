@@ -22,7 +22,7 @@
 <script lang="ts">
     import { computed, defineComponent, PropType } from 'vue'
     // PropType接收一个泛型，可以将Array的构造函数返回传入的泛型类型
-    // import defaultImg from '@/assets/defaultImg.jpeg'
+    import defaultImg from '@/assets/logo.png'
 
     export interface ColumnProps {
         id: number,
@@ -45,7 +45,7 @@
                 return props.list.map(listItem => {
                     return {
                         ...listItem,
-                        avatar: listItem.avatar ? listItem.avatar : require('@/assets/defaultImg.jpeg')
+                        avatar: listItem.avatar ? listItem.avatar : defaultImg
                         // avatar: listItem.avatar ? listItem.avatar : defaultImg
                     }
                 })
