@@ -15,3 +15,6 @@ body, html {
 ul,ol,li {
     list-style: none;
 }
+p {
+    margin: 0;
+}
