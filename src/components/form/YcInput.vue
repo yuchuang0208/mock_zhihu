@@ -13,8 +13,9 @@
 </template>
 
 <script lang="ts">
-    import { defineComponent, reactive, PropType } from 'vue'
+    import { defineComponent, reactive, PropType, onMounted } from 'vue'
     import { useTrimSpace } from '@/hooks/useCommon'
+    import { emitter } from '@/components/YcForm.vue'
     const emailValid = /^[0-9A-Za-z.@-_]{6,30}$/
 
     interface lenProp {
@@ -82,7 +83,9 @@
                         return passed
                     })
                     emailData.error = !allPassed
+                    return allPassed
                 }
+                return true
             }
 
             const updateValue = (e: KeyboardEvent) => {
@@ -90,6 +93,15 @@
                 emailData.val = targetValue
                 context.emit('update:modelValue', targetValue)
             }
+
+            const inputReset = () => {
+                emailData.val = ''
+            }
+
+            onMounted(() => {
+                emitter.emit('form-item-create', inputChange)
+                emitter.emit('form-item-reset', inputReset)
+            })
 
             return {
                 emailData,

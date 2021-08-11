@@ -1,13 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import createAppRoute from './router'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/css/reset.css'
 
-import '@/maints/directive'
-
 const app = createApp(App)
 
+createAppRoute(app)
+
+// import '@/maints/directive'
 // app.directive('clickOutside', {
 //     mounted (el, binding) {
 //         const handler = (e: MouseEvent) => {
