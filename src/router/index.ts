@@ -9,6 +9,11 @@ const routes = [
         path: '/Login',
         name: 'Login',
         component: () => import('@/views/Login.vue')
+    },
+    {
+        path: '/columnDetail/:id',
+        name: 'columnDetail',
+        component: () => import('@/views/column/columnDetail.vue')
     }
 ]
 

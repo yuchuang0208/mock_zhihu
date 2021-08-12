@@ -2,10 +2,10 @@
     <div class="GlobalHeader mb-5">
         <nav class="navbar navbar-dark bg-primary flex-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">之乎者也-专栏</a>
+                <router-link class="navbar-brand" to="/">之乎者也-专栏</router-link>
                 <div v-if="!user.isLogin">
-                    <button class="btn btn-outline-light btn-lg m-2">登录</button>
-                    <button class="btn btn-outline-light btn-lg">注册</button>
+                    <router-link to="/Login" class="btn btn-outline-light btn-lg m-2">登录</router-link>
+                    <router-link to="/Login" class="btn btn-outline-light btn-lg">注册</router-link>
                 </div>
                 <div v-else>
                     <!-- <span class="navbar-text">你好 {{ user.name }}</span> -->

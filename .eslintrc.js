@@ -15,7 +15,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
-    '@typescript-eslint/explicit-module-boundary-types': ['no-any'],
+    '@typescript-eslint/explicit-module-boundary-types': [0],
     indent: ['off', 4],
     'vue/script-indent': [
         'error',
